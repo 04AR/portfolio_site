@@ -1,0 +1,187 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <meta charset="UTF-8" />
+    <title>Conway's Game of Life</title>
+  </head>
+  <body>
+    <Header />
+    <h1>Conway's Game of Life</h1>
+
+    <style>
+      .controls {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      canvas {
+        border: 1px solid #333;
+        background-color: #fff;
+        touch-action: none;
+      }
+
+      .game-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+
+    <div class="game-wrapper">
+      <canvas id="gameCanvas" width="500" height="500"></canvas>
+      <div class="controls">
+        <button id="startPauseBtn">▶ Start</button>
+        <button id="stepBtn">⏭ Next Frame</button>
+        <button id="fastBtn">⏩ Fast Forward</button>
+        <button id="clearBtn">🧹 Clear</button>
+      </div>
+    </div>
+
+    <script type="module">
+      const canvas = document.getElementById("gameCanvas");
+      const ctx = canvas.getContext("2d");
+
+      const rows = 50;
+      const cols = 50;
+      const cellSize = canvas.width / cols;
+
+      let grid = Array.from({ length: rows }, () => Array(cols).fill(0));
+      let isRunning = false;
+      let fastForward = false;
+      let animationId = null;
+
+      // === Drawing State ===
+      let isMouseDown = false;
+      let drawValue = 1; // 1 = make alive, 0 = make dead
+
+      // === Drawing Functions ===
+      function drawGrid() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            ctx.fillStyle = grid[r][c] ? "#111" : "#fff";
+            ctx.fillRect(c * cellSize, r * cellSize, cellSize, cellSize);
+            ctx.strokeStyle = "#ccc";
+            ctx.strokeRect(c * cellSize, r * cellSize, cellSize, cellSize);
+          }
+        }
+      }
+
+      function nextGen() {
+        const newGrid = grid.map((arr) => [...arr]);
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            let liveNeighbors = 0;
+            for (let dr = -1; dr <= 1; dr++) {
+              for (let dc = -1; dc <= 1; dc++) {
+                if (dr === 0 && dc === 0) continue;
+                const nr = r + dr;
+                const nc = c + dc;
+                if (nr >= 0 && nr < rows && nc >= 0 && nc < cols) {
+                  liveNeighbors += grid[nr][nc];
+                }
+              }
+            }
+
+            if (grid[r][c] === 1 && (liveNeighbors < 2 || liveNeighbors > 3)) {
+              newGrid[r][c] = 0;
+            } else if (grid[r][c] === 0 && liveNeighbors === 3) {
+              newGrid[r][c] = 1;
+            }
+          }
+        }
+        grid = newGrid;
+      }
+
+      function loop() {
+        if (isRunning || fastForward) {
+          nextGen();
+          drawGrid();
+          animationId = requestAnimationFrame(loop);
+        }
+      }
+
+      // === Controls ===
+      document.getElementById("startPauseBtn").onclick = () => {
+        isRunning = !isRunning;
+        fastForward = false;
+        if (isRunning) {
+          loop();
+          startPauseBtn.textContent = "⏸ Pause";
+        } else {
+          cancelAnimationFrame(animationId);
+          startPauseBtn.textContent = "▶ Start";
+        }
+      };
+
+      document.getElementById("stepBtn").onclick = () => {
+        nextGen();
+        drawGrid();
+      };
+
+      document.getElementById("fastBtn").onclick = () => {
+        fastForward = true;
+        isRunning = false;
+        loop();
+      };
+
+      document.getElementById("clearBtn").onclick = () => {
+        cancelAnimationFrame(animationId);
+        grid = Array.from({ length: rows }, () => Array(cols).fill(0));
+        drawGrid();
+        isRunning = false;
+        fastForward = false;
+        startPauseBtn.textContent = "▶ Start";
+      };
+
+      // === Drawing Cells with Drag ===
+      canvas.addEventListener("mousedown", (e) => {
+        isMouseDown = true;
+        const { row, col } = getCell(e);
+        drawValue = grid[row][col] === 1 ? 0 : 1;
+        grid[row][col] = drawValue;
+        drawGrid();
+      });
+
+      canvas.addEventListener("mousemove", (e) => {
+        if (isMouseDown) {
+          const { row, col } = getCell(e);
+          grid[row][col] = drawValue;
+          drawGrid();
+        }
+      });
+
+      canvas.addEventListener("mouseup", () => (isMouseDown = false));
+      canvas.addEventListener("mouseleave", () => (isMouseDown = false));
+
+      function getCell(e) {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const col = Math.floor(x / cellSize);
+        const row = Math.floor(y / cellSize);
+        return { row, col };
+      }
+
+      drawGrid(); // Initial render
+    </script>
+    <Footer />
+  </body>
+</html>

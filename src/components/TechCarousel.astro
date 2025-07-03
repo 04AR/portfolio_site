@@ -1,0 +1,148 @@
+---
+
+---
+
+<div
+  id="marqueeTrack"
+  class="bg-gray-200 relative flex overflow-hidden p-6 track-container"
+>
+  <div class="marquee-content flex">
+    <div class="shrink-0 flex justify-around min-w-full icon-set">
+      <img src="/svgs/devicon--androidstudio.svg" alt="android" title="androidstudio" />
+      <img src="/svgs/devicon--astro.svg" alt="astro" title="astro" />
+      <img src="/svgs/devicon--html5.svg" alt="html" title="html" />
+      <img src="/svgs/devicon--css3.svg" alt="css" title="css" />
+      <img src="/svgs/devicon--javascript.svg" alt="javascript" title="javascript" />
+      <img src="/svgs/devicon--typescript.svg" alt="typescript" title="typescript" />
+      <img src="/svgs/devicon--tailwindcss.svg" alt="tailwindcss" title="tailwindcss" />
+      <img src="/svgs/devicon--svelte.svg" alt="svelte" title="svelte" />
+      <img src="/svgs/devicon--react-wordmark.svg" alt="react" title="react" />
+      <img src="/svgs/devicon--nodejs-wordmark.svg" alt="nodejs" title="nodejs" />
+      <img src="/svgs/devicon--threejs-wordmark.svg" alt="threejs" title="threejs" />
+      <img src="/svgs/devicon--python-wordmark.svg" alt="python" title="python" />
+      <img src="/svgs/devicon--rust.svg" alt="rust" title="rust" />
+      <img src="/svgs/devicon--go-wordmark.svg" alt="go" title="go" />
+      <img src="/svgs/devicon--godot.svg" alt="godot" title="godot" />
+    </div>
+
+    <div
+      aria-hidden="true"
+      class="shrink-0 flex justify-around min-w-full icon-set"
+    >
+      <img src="/svgs/devicon--androidstudio.svg" alt="android" title="androidstudio" />
+      <img src="/svgs/devicon--astro.svg" alt="astro" title="astro" />
+      <img src="/svgs/devicon--html5.svg" alt="html" title="html" />
+      <img src="/svgs/devicon--css3.svg" alt="css" title="css" />
+      <img src="/svgs/devicon--javascript.svg" alt="javascript" title="javascript" />
+      <img src="/svgs/devicon--typescript.svg" alt="typescript" title="typescript" />
+      <img src="/svgs/devicon--tailwindcss.svg" alt="tailwindcss" title="tailwindcss" />
+      <img src="/svgs/devicon--svelte.svg" alt="svelte" title="svelte" />
+      <img src="/svgs/devicon--react-wordmark.svg" alt="react" title="react" />
+      <img src="/svgs/devicon--nodejs-wordmark.svg" alt="nodejs" title="nodejs" />
+      <img src="/svgs/devicon--threejs-wordmark.svg" alt="threejs" title="threejs" />
+      <img src="/svgs/devicon--python-wordmark.svg" alt="python" title="python" />
+      <img src="/svgs/devicon--rust.svg" alt="rust" title="rust" />
+      <img src="/svgs/devicon--go-wordmark.svg" alt="go" title="go" />
+      <img src="/svgs/devicon--godot.svg" alt="godot" title="godot" />
+    </div>
+  </div>
+</div>
+
+<style>
+/*
+ * Base Styles for the Marquee Container
+ * - Controls the viewport for the scrolling icons.
+ * - `overflow: hidden` is crucial for masking and preventing default scrollbars.
+ * - `mask-image` creates the fading edges.
+ */
+ .track-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  background-color: transparent;
+  padding: 6px 0; /* Changed from 6px to 6px 0 to be more explicit with vertical padding */
+
+  /* --- Fading Edges using mask-image --- */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/*
+ * Styles for the Marquee Content
+ * - This is the element that actually animates horizontally.
+ * - `will-change: transform` is a direct performance hint to the browser.
+ * - `transform: translate3d` forces GPU acceleration, a common jitter fix.
+ */
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: marquee-animation 20s linear infinite;
+
+  /* --- Key Jitter Fix --- */
+  /* This is the modern and recommended approach for smooth animations. */
+  will-change: transform; 
+  /* Fallback/additional fix for older browsers or stubborn jitters. */
+  /* transform: translate3d(0, 0, 0); */
+}
+
+/*
+ * Styles for Individual Icon Sets
+ * - Each `.icon-set` contains one full group of icons.
+ * - We are now using a specific padding on the icons to ensure consistent spacing.
+ */
+.icon-set {
+  flex-shrink: 0;
+  /* Instead of min-width: 50%, we let the content define the width.
+     This ensures the total width is pixel-perfect. */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.icon-set img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+  max-height: 80px;
+  width: auto;
+  cursor: pointer;
+  display: inline-block;
+  object-fit: contain;
+  margin: 0 40px; /* Added a fixed margin for consistent spacing */
+}
+
+.icon-set img:hover {
+  filter: grayscale(0%);
+}
+
+.track-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+
+@keyframes marquee-animation {
+  from {
+    /* Use a calc() for precision. `100%` here refers to the width of the animated element, which is the `marquee-content`. */
+    transform: translateX(0);
+  }
+  to {
+    /* Move the content to the left by the width of one icon-set.
+       Since `marquee-content` is 200% of the container, -50% is one icon set's width. */
+    transform: translateX(-100%);
+  }
+}
+</style>

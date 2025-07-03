@@ -1,0 +1,22 @@
+---
+const { anim = "vanta.bird.min.js"} = Astro.props;
+---
+
+<script src="three.min.js" is:inline></script>
+<script src={anim} is:inline></script>
+<script>
+  VANTA.BIRDS({
+    el: "#anim",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color1: 0xff0000,
+    color2: 0xd1ff,
+    backgroundColor: 0x111318,
+    colorMode: "lerp"
+  })
+</script>

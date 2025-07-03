@@ -1,8 +1,8 @@
 ---
-const { anim = "vanta.bird.min.js"} = Astro.props;
+const { anim = "/portfolio_site/vanta.bird.min.js"} = Astro.props;
 ---
 
-<script src="three.min.js" is:inline></script>
+<script src="/portfolio_site/three.min.js" is:inline></script>
 <script src={anim} is:inline></script>
 <script>
   VANTA.BIRDS({

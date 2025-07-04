@@ -8,7 +8,7 @@ import Card from "../components/Card.astro";
 import ScCard from "../components/ScrollCard.astro";
 import SvgAnim from "../components/SvgPathAnim.astro";
 import Type from "../components/Typewriter.astro";
-import Tech from "../components/TechCarousel.astro";
+import Tech from "../components/TechMarquee.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
@@ -39,7 +39,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       <section class="sticky top-22 h-screen bg-white p-10">
         <h1 class="text-8xl font-bold text-black">P R 0 J E C T S :</h1>
         <h1 class="text-8xl font-bold text-black">S 0 M E T H I N G_H E R E</h1>
-        <div class="md:flex md:ml-50 items-center">
+        <div class="md:flex md:ml-50 items-center md:">
+          <Card />
+          <Card />
           <Card />
         </div>
       </section>

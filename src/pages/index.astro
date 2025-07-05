@@ -6,6 +6,7 @@ import Anim from "../components/BgCanvasAnim.astro";
 
 import Card from "../components/Card.astro";
 import ScCard from "../components/ScrollCard.astro";
+import Contact from "../components/contact.astro";
 import SvgAnim from "../components/SvgPathAnim.astro";
 import Type from "../components/Typewriter.astro";
 import Tech from "../components/TechMarquee.astro";
@@ -39,7 +40,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       <section class="sticky top-22 h-screen bg-white p-10">
         <h1 class="text-8xl font-bold text-black">P R 0 J E C T S :</h1>
         <h1 class="text-8xl font-bold text-black">S 0 M E T H I N G_H E R E</h1>
-        <div class="md:flex md:ml-50 items-center md:">
+        <div class="md:flex md:justify-between items-center">
           <Card />
           <Card />
           <Card />
@@ -57,7 +58,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       <section class="sticky top-22 h-screen bg-white p-10">
         <h1 class="text-8xl font-bold text-black">B L 0 G S :</h1>
         <h1 class="text-8xl font-bold">S 0 M E T H I N G_H E R E</h1>
-        <div class="md:flex md:ml-50 items-center">
+        <div class="md:flex md:justify-between items-center">
+          <Card />
+          <Card />
           <Card />
         </div>
       </section>
@@ -72,10 +75,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
       <section class="sticky top-22 h-screen bg-white p-10">
         <h1 class="text-8xl font-bold text-black">C 0 N T A C T S :</h1>
-        <h1 class="text-8xl font-bold">S 0 M E T H I N G_H E R E</h1>
-        <div class="md:flex md:ml-50 items-center">
-          <Card />
-        </div>
+        <Contact />
       </section>
       
       <div class="fixed top-10 right-10 lg:w-1/2 p-8 text-white mix-blend-difference">

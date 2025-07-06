@@ -1,52 +1,101 @@
 ---
+// src/components/Marquee.astro
+interface Props {
+  reverse?: boolean; // Optional prop to reverse the animation
+}
 
+const { reverse = false } = Astro.props;
+
+const marqueeDirectionClass = reverse ? 'marquee-reverse' : '';
 ---
 
 <div
   id="marqueeTrack"
-  class="bg-gray-200 relative flex overflow-hidden p-6 track-container"
+  class:list={['bg-gray-200 relative flex overflow-hidden p-6 track-container', marqueeDirectionClass]}
 >
   <div class="marquee-content flex">
     <div class="shrink-0 flex justify-around min-w-full icon-set">
+      <h1 class="text-8xl font-bold text-black">A P P  D E V</h1>
       <img src="/portfolio_site/svgs/devicon--androidstudio.svg" alt="android" title="androidstudio" />
-      <img src="/portfolio_site/svgs/devicon--astro.svg" alt="astro" title="astro" />
+      <img src="/portfolio_site/svgs/devicon--flutter.svg" alt="flutter" title="flutter" />
+      <img src="/portfolio_site/svgs/devicon--reactnative-wordmark.svg" alt="react" title="react" />
+
+      <h1 class="text-8xl font-bold text-black">F R O N T E N D</h1>
       <img src="/portfolio_site/svgs/devicon--html5.svg" alt="html" title="html" />
       <img src="/portfolio_site/svgs/devicon--css3.svg" alt="css" title="css" />
-      <img src="/portfolio_site/svgs/devicon--javascript.svg" alt="javascript" title="javascript" />
-      <img src="/portfolio_site/svgs/devicon--typescript.svg" alt="typescript" title="typescript" />
       <img src="/portfolio_site/svgs/devicon--tailwindcss.svg" alt="tailwindcss" title="tailwindcss" />
+      <img src="/portfolio_site/svgs/devicon--astro.svg" alt="astro" title="astro" />
       <img src="/portfolio_site/svgs/devicon--svelte.svg" alt="svelte" title="svelte" />
       <img src="/portfolio_site/svgs/devicon--react-wordmark.svg" alt="react" title="react" />
-      <img src="/portfolio_site/svgs/devicon--nodejs-wordmark.svg" alt="nodejs" title="nodejs" />
       <img src="/portfolio_site/svgs/devicon--threejs-wordmark.svg" alt="threejs" title="threejs" />
+      
+      <h1 class="text-8xl font-bold text-black">B A C K E N D</h1>
+      <img src="/portfolio_site/svgs/devicon--nodejs-wordmark.svg" alt="nodejs" title="nodejs" />
+      <img src="/portfolio_site/svgs/devicon--firebase-wordmark.svg" alt="firebase" title="firebase" />
+      <img src="/portfolio_site/svgs/devicon--mongodb-wordmark.svg" alt="mongodb" title="mongodb" />
+      <img src="/portfolio_site/svgs/devicon--postgresql-wordmark.svg" alt="postgresql" title="postgresql" />
+      
+      <h1 class="text-8xl font-bold text-black">L A N G U A G E S</h1>
+      <img src="/portfolio_site/svgs/devicon--cplusplus.svg" alt="c++" title="c++" />
       <img src="/portfolio_site/svgs/devicon--python-wordmark.svg" alt="python" title="python" />
+      <img src="/portfolio_site/svgs/devicon--java-wordmark.svg" alt="java" title="java" />
       <img src="/portfolio_site/svgs/devicon--rust.svg" alt="rust" title="rust" />
       <img src="/portfolio_site/svgs/devicon--go-wordmark.svg" alt="go" title="go" />
+      <img src="/portfolio_site/svgs/devicon--javascript.svg" alt="javascript" title="javascript" />
+      <img src="/portfolio_site/svgs/devicon--typescript.svg" alt="typescript" title="typescript" />
+
+      <h1 class="text-8xl font-bold text-black">G A M E  D E V</h1>
       <img src="/portfolio_site/svgs/devicon--godot.svg" alt="godot" title="godot" />
+      <img src="/portfolio_site/svgs/devicon--unrealengine-wordmark.svg" alt="unreal" title="unreal" />
+      <img src="/portfolio_site/svgs/devicon--unity-wordmark.svg" alt="unity" title="unity" />
+      <img src="/portfolio_site/svgs/devicon--blender.svg" alt="blender3d" title="blender3d" />
+      <img src="/portfolio_site/svgs/devicon--git-wordmark.svg" alt="git" title="git" />
+      <img src="/portfolio_site/svgs/devicon--docker-wordmark.svg" alt="docker" title="docker" />
     </div>
 
     <div
       aria-hidden="true"
       class="shrink-0 flex justify-around min-w-full icon-set"
     >
+      <h1 class="text-8xl font-bold text-black">A P P_D E V</h1>
       <img src="/portfolio_site/svgs/devicon--androidstudio.svg" alt="android" title="androidstudio" />
-      <img src="/portfolio_site/svgs/devicon--astro.svg" alt="astro" title="astro" />
+      <img src="/portfolio_site/svgs/devicon--flutter.svg" alt="flutter" title="flutter" />
+
+      <h1 class="text-8xl font-bold text-black">F R O N T E N D</h1>
       <img src="/portfolio_site/svgs/devicon--html5.svg" alt="html" title="html" />
       <img src="/portfolio_site/svgs/devicon--css3.svg" alt="css" title="css" />
-      <img src="/portfolio_site/svgs/devicon--javascript.svg" alt="javascript" title="javascript" />
-      <img src="/portfolio_site/svgs/devicon--typescript.svg" alt="typescript" title="typescript" />
       <img src="/portfolio_site/svgs/devicon--tailwindcss.svg" alt="tailwindcss" title="tailwindcss" />
+      <img src="/portfolio_site/svgs/devicon--astro.svg" alt="astro" title="astro" />
       <img src="/portfolio_site/svgs/devicon--svelte.svg" alt="svelte" title="svelte" />
       <img src="/portfolio_site/svgs/devicon--react-wordmark.svg" alt="react" title="react" />
-      <img src="/portfolio_site/svgs/devicon--nodejs-wordmark.svg" alt="nodejs" title="nodejs" />
       <img src="/portfolio_site/svgs/devicon--threejs-wordmark.svg" alt="threejs" title="threejs" />
+      
+      <h1 class="text-8xl font-bold text-black">B A C K E N D</h1>
+      <img src="/portfolio_site/svgs/devicon--nodejs-wordmark.svg" alt="nodejs" title="nodejs" />
+      <img src="/portfolio_site/svgs/devicon--firebase-wordmark.svg" alt="firebase" title="firebase" />
+      <img src="/portfolio_site/svgs/devicon--mongodb-wordmark.svg" alt="mongodb" title="mongodb" />
+      <img src="/portfolio_site/svgs/devicon--postgresql-wordmark.svg" alt="postgresql" title="postgresql" />
+      
+      <h1 class="text-8xl font-bold text-black">L A N G U A G E S</h1>
+      <img src="/portfolio_site/svgs/devicon--cplusplus.svg" alt="c++" title="c++" />
       <img src="/portfolio_site/svgs/devicon--python-wordmark.svg" alt="python" title="python" />
       <img src="/portfolio_site/svgs/devicon--rust.svg" alt="rust" title="rust" />
       <img src="/portfolio_site/svgs/devicon--go-wordmark.svg" alt="go" title="go" />
+      <img src="/portfolio_site/svgs/devicon--javascript.svg" alt="javascript" title="javascript" />
+      <img src="/portfolio_site/svgs/devicon--typescript.svg" alt="typescript" title="typescript" />
+
+      <h1 class="text-8xl font-bold text-black">G A M E_D E V</h1>
       <img src="/portfolio_site/svgs/devicon--godot.svg" alt="godot" title="godot" />
+      <img src="/portfolio_site/svgs/devicon--unrealengine-wordmark.svg" alt="unreal" title="unreal" />
+      <img src="/portfolio_site/svgs/devicon--unity-wordmark.svg" alt="unity" title="unity" />
+      <img src="/portfolio_site/svgs/devicon--blender.svg" alt="blender3d" title="blender3d" />
+      <img src="/portfolio_site/svgs/devicon--git-wordmark.svg" alt="git" title="git" />
+      <img src="/portfolio_site/svgs/devicon--docker-wordmark.svg" alt="docker" title="docker" />
     </div>
   </div>
 </div>
+
+
 
 <style>
 /*
@@ -90,7 +139,7 @@
   display: flex;
   flex-shrink: 0;
   white-space: nowrap;
-  animation: marquee-animation 20s linear infinite;
+  animation: marquee-animation 40s linear infinite;
 
   /* --- Key Jitter Fix --- */
   /* This is the modern and recommended approach for smooth animations. */
@@ -106,8 +155,7 @@
  */
 .icon-set {
   flex-shrink: 0;
-  /* Instead of min-width: 50%, we let the content define the width.
-     This ensures the total width is pixel-perfect. */
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -122,7 +170,7 @@
   cursor: pointer;
   display: inline-block;
   object-fit: contain;
-  margin: 0 40px; /* Added a fixed margin for consistent spacing */
+  margin: 0 10px; /* Added a fixed margin for consistent spacing */
 }
 
 .icon-set img:hover {
@@ -133,6 +181,9 @@
   animation-play-state: paused;
 }
 
+.marquee-reverse .marquee-content {
+  animation-direction: reverse;
+}
 
 @keyframes marquee-animation {
   from {

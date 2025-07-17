@@ -45,7 +45,7 @@
     /* Enable vertical scrolling */
     overflow-y: auto;
     /* This is the key property for enabling scroll snapping */
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y mandatory; */
   }
 
   .scroll-section {
@@ -193,8 +193,8 @@
     ease: 'cubicBezier(0.175, 0.885, 0.320, 1.275)',
     autoplay: onScroll({
       container: ".scroll-container",
-      enter: "bottom-=50 top",
-      leave: "top+=60 bottom",
+      enter: "bottom top",
+      leave: "top bottom",
       sync: true,
       debug: true,
     }),

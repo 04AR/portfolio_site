@@ -21,75 +21,70 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   </head>
   <body>
     <main class="relative">
-      <Header />
 
-      <section id="anim" class="sticky top-22 h-screen bg-gray-900 p-10">
-
-        <h1 class="text-9xl font-bold text-white">AR_04</h1>
-
-        <div class="flex">
-          <p class="text-4xl text-white">
-            Hi there, I am intersted in&nbsp
-            <Type words={'["Music", "Games", "Anime"]'} />
-          </p>
-        </div>
-      </section>
-
-      <Anim anim="/portfolio_site/vanta.bird.min.js" />
-
-      <section class="sticky top-22 h-screen bg-white p-10">
-        <h1 class="text-8xl font-bold text-black">P R 0 J E C T S :</h1>
-        <h1 class="text-8xl font-bold text-black">S 0 M E T H I N G_H E R E</h1>
-        <div class="md:flex md:justify-between items-center">
-          <Card />
-          <Card />
-          <Card />
-        </div>
-      </section>
-
-      <section class="sticky top-22 h-screen bg-gray-200 p-10">
-        <h1 class="text-8xl font-bold text-black">T E C H S_I_U S E D :</h1>
-        <div class="p-5">
-          <Tech />
-          <Tech reverse={true} />
-          <Tech />
-          <Tech reverse={true} />
-        </div>
-      </section>
-
-
-      <section class="sticky top-22 h-screen bg-white p-10">
-        <h1 class="text-8xl font-bold text-black">B L 0 G S :</h1>
-        <h1 class="text-8xl font-bold">S 0 M E T H I N G_H E R E</h1>
-        <div class="md:flex md:justify-between items-center">
-          <Card />
-          <Card />
-          <Card />
-        </div>
-      </section>
-
-      <section class="sticky top-22 h-screen bg-gray-200 p-10">
-        <h1 class="text-8xl font-bold text-black">T H 0 U G H T S:</h1>
-        <h2 class="text-8xl font-bold text-black">
-          "Uncertainty is an uncomfortable position. But certainty is an absurd
-          one."
-        </h2>
-      </section>
-
-      <section class="sticky top-22 h-screen bg-white p-10">
-        <h1 class="text-8xl font-bold text-black">C 0 N T A C T S :</h1>
-        <Contact />
-      </section>
+        <Header />          
+        <section id="anim" class="sticky top-22 h-screen bg-gray-900 p-10">
+            
+            <h1 class="text-9xl font-bold text-white">AR_04</h1>
+            
+          <div class="flex">
+            <p class="text-4xl text-white">
+              Hi there, I am intersted in&nbsp
+              <Type words={'["Music", "Games", "Anime"]'} />
+            </p>
+          </div>
+        </section>
+        
+        <Anim anim="/portfolio_site/vanta.bird.min.js" />
+        
+        <section class="sticky top-22 h-screen bg-white p-10">
+          <h1 class="text-8xl font-bold text-black">P R 0 J E C T S :</h1>
+          <h1 class="text-8xl font-bold text-black">S 0 M E T H I N G_H E R E</h1>
+          <div class="md:flex md:justify-between items-center">
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        </section>
       
-      <div class="fixed top-10 right-10 lg:w-1/2 p-8 text-white mix-blend-difference">
+        <section class="sticky top-22 h-screen bg-gray-200 p-10">
+          <h1 class="text-8xl font-bold text-black">T E C H S_I_U S E D :</h1>
+          <div class="p-5">
+            <Tech />
+            <Tech reverse={true} />
+            <Tech />
+            <Tech reverse={true} />
+          </div>
+
+        </section>
+              
+        <section class="sticky top-22 h-screen bg-white p-10">
+          <h1 class="text-8xl font-bold text-black">B L 0 G S :</h1>
+          <h1 class="text-8xl font-bold">S 0 M E T H I N G_H E R E</h1>
+          <div class="md:flex md:justify-between items-center">
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        </section>
+        
+        <section class="sticky top-22 h-screen bg-gray-200 p-10">
+          <h1 class="text-8xl font-bold text-black">T H 0 U G H T S:</h1>
+          <h2 class="text-8xl font-bold text-black">
+            "Uncertainty is an uncomfortable position. But certainty is an absurd
+            one."
+          </h2>
+        </section>
+        
         <SvgAnim />
-      </div>
+        <section class="sticky top-22 h-screen bg-white p-10">
+          <h1 class="text-8xl font-bold text-black">C 0 N T A C T S :</h1>
+          <Contact />
+        </section>
 
-      <div class="sticky top-0 bg-gray-200 p-10">
-      
-      </div>
+      <Footer />
     </main>
-    <Footer />
     
   </body>
-</html>
+  </html>
+  

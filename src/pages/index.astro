@@ -10,6 +10,7 @@ import Contact from "../components/contact.astro";
 import SvgAnim from "../components/SvgPathAnim.astro";
 import Type from "../components/Typewriter.astro";
 import Tech from "../components/TechMarquee.astro";
+import ContentList from "../components/ContentList.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
@@ -38,10 +39,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       <section class="sticky top-22 h-screen bg-white p-10">
         <h1 class="text-8xl font-bold text-black">P R 0 J E C T S :</h1>
         <h1 class="text-8xl font-bold text-black">S 0 M E T H I N G_H E R E</h1>
-        <div class="md:flex md:justify-between items-center">
-          <Card />
-          <Card />
-          <Card />
+        <div
+          class="overflow-x-auto
+            snap-x snap-mandatory
+            [&>ul]:flex
+            [&>ul]:space-x-6
+            [&>ul>li]:min-w-[33.33%]
+            [&>ul>li]:flex-shrink-0
+            [&>ul]:list-none
+            [&>ul]:p-0 [&>ul]:m-0"
+        >
+          <ContentList content="projects" limit="10" />
         </div>
       </section>
 
@@ -58,10 +66,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       <section class="sticky top-22 h-screen bg-white p-10">
         <h1 class="text-8xl font-bold text-black">B L 0 G S :</h1>
         <h1 class="text-8xl font-bold">S 0 M E T H I N G_H E R E</h1>
-        <div class="md:flex md:justify-between items-center">
-          <Card />
-          <Card />
-          <Card />
+        <div
+          class="overflow-x-auto
+            snap-x snap-mandatory
+            [&>ul]:flex
+            [&>ul]:space-x-6
+            [&>ul>li]:min-w-[33.33%]
+            [&>ul>li]:flex-shrink-0
+            [&>ul]:list-none
+            [&>ul]:p-0 [&>ul]:m-0"
+        >
+          <ContentList content="blog" limit="5" />
         </div>
       </section>
 

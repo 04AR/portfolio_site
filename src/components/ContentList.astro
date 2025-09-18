@@ -20,11 +20,11 @@ const posts = (await getCollection(content as any))
   }
 </style>
 
-<ul class="">
+<ul>
   {
     posts.map((post) => (
       <li>
-        <a href={`/portfolio_site/projects/${post.id}/`}>
+        <a href={`/portfolio_site/${content}/${post.id}/`}>
           <img width={720} height={360} src={post.data.heroImage} alt="" />
           <h4 class="title">{post.data.title}</h4>
           <p class="date">

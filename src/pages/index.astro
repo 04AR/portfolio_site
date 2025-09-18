@@ -36,12 +36,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
       <Anim anim="/portfolio_site/vanta.bird.min.js" />
 
+      <section class="sticky top-22 h-screen bg-gray-200 p-10">
+        <h1 class="text-7xl font-bold text-black">T E C H S_I_U S E D :</h1>
+        <div class="p-5">
+          <Tech />
+          <Tech reverse={true} />
+          <Tech />
+          <Tech reverse={true} />
+        </div>
+      </section>
+
       <section class="sticky top-22 h-screen bg-white p-10">
-        <h1 class="text-8xl font-bold text-black">P R 0 J E C T S :</h1>
-        <h1 class="text-8xl font-bold text-black">S 0 M E T H I N G_H E R E</h1>
+        <h1 class="text-7xl font-bold text-black">P R 0 J E C T S :</h1>
         <div
           class="overflow-x-auto
             snap-x snap-mandatory
+            overflow-hidden
+            [mask-image:linear-gradient(to_right,transparent,black_2%,black_98%,transparent)]
+            [mask-repeat:no-repeat] [mask-size:100%_100%]
             [&>ul]:flex
             [&>ul]:space-x-6
             [&>ul>li]:min-w-[33.33%]
@@ -53,25 +65,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </div>
       </section>
 
-      <section class="sticky top-22 h-screen bg-gray-200 p-10">
-        <h1 class="text-8xl font-bold text-black">T E C H S_I_U S E D :</h1>
-        <div class="p-5">
-          <Tech />
-          <Tech reverse={true} />
-          <Tech />
-          <Tech reverse={true} />
-        </div>
-      </section>
-
       <section class="sticky top-22 h-screen bg-white p-10">
-        <h1 class="text-8xl font-bold text-black">B L 0 G S :</h1>
-        <h1 class="text-8xl font-bold">S 0 M E T H I N G_H E R E</h1>
+        <h1 class="text-7xl font-bold text-black">B L 0 G S :</h1>
         <div
           class="overflow-x-auto
             snap-x snap-mandatory
+            overflow-hidden
+            [mask-image:linear-gradient(to_right,transparent,black_2%,black_98%,transparent)]
+            [mask-repeat:no-repeat] [mask-size:100%_100%]
             [&>ul]:flex
-            [&>ul]:space-x-6
-            [&>ul>li]:min-w-[33.33%]
+            [&>ul]:space-x-10
             [&>ul>li]:flex-shrink-0
             [&>ul]:list-none
             [&>ul]:p-0 [&>ul]:m-0"
@@ -81,18 +84,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       </section>
 
       <section class="sticky top-22 h-screen bg-gray-200 p-10">
-        <h1 class="text-8xl font-bold text-black">T H 0 U G H T S:</h1>
-        <h2 class="text-8xl font-bold text-black">
+        <h1 class="text-7xl font-bold text-black">T H 0 U G H T S:</h1>
+        <h2 class="text-7xl font-bold text-black">
           "Uncertainty is an uncomfortable position. But certainty is an absurd
           one."
         </h2>
       </section>
 
       <!-- <SvgAnim /> -->
-      <section class="sticky top-22 h-screen bg-white p-10">
-        <h1 class="text-8xl font-bold text-black">C 0 N T A C T S :</h1>
+      <!-- <section class="sticky top-22 h-screen bg-white p-10">
+        <h1 class="text-7xl font-bold text-black">C 0 N T A C T S :</h1>
         <Contact />
-      </section>
+      </section> -->
     </main>
     <Footer />
   </body>

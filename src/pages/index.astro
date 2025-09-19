@@ -19,6 +19,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .hide-scrollbar {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE & Edge */
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+      }
+    </style>
   </head>
   <body>
     <main class="relative">
@@ -38,57 +47,63 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
       <section class="sticky top-22 h-screen bg-gray-200 p-10">
         <h1 class="text-7xl font-bold text-black">T E C H S_I_U S E D :</h1>
-        <div class="p-5">
-          <Tech />
-          <Tech reverse={true} />
-          <Tech />
-          <Tech reverse={true} />
+        <div
+          class="absolute top-1/2 -translate-y-1/2 w-full left-0 right-0 p-5"
+        >
+          <div>
+            <Tech />
+            <Tech reverse={true} />
+            <Tech />
+            <Tech reverse={true} />
+          </div>
         </div>
       </section>
 
       <section class="sticky top-22 h-screen bg-white p-10">
         <h1 class="text-7xl font-bold text-black">P R 0 J E C T S :</h1>
-        <div
-          class="overflow-x-auto
-            snap-x snap-mandatory
-            overflow-hidden
-            [mask-image:linear-gradient(to_right,transparent,black_2%,black_98%,transparent)]
-            [mask-repeat:no-repeat] [mask-size:100%_100%]
-            [&>ul]:flex
-            [&>ul]:space-x-6
-            [&>ul>li]:min-w-[33.33%]
-            [&>ul>li]:flex-shrink-0
-            [&>ul]:list-none
-            [&>ul]:p-0 [&>ul]:m-0"
-        >
-          <ContentList content="projects" limit="10" />
-        </div>
-      </section>
-
-      <section class="sticky top-22 h-screen bg-white p-10">
-        <h1 class="text-7xl font-bold text-black">B L 0 G S :</h1>
-        <div
-          class="overflow-x-auto
-            snap-x snap-mandatory
-            overflow-hidden
-            [mask-image:linear-gradient(to_right,transparent,black_2%,black_98%,transparent)]
-            [mask-repeat:no-repeat] [mask-size:100%_100%]
-            [&>ul]:flex
-            [&>ul]:space-x-10
-            [&>ul>li]:flex-shrink-0
-            [&>ul]:list-none
-            [&>ul]:p-0 [&>ul]:m-0"
-        >
-          <ContentList content="blog" limit="5" />
+        <div class="absolute top-1/2 -translate-y-1/2 w-full left-0 right-0">
+          <div
+            class="overflow-x-auto hide-scrollbar
+              [mask-image:linear-gradient(to_right,transparent,black_2%,black_98%,transparent)]
+              [mask-repeat:no-repeat] [mask-size:100%_100%]
+              [&>ul]:space-x-10
+              [&>ul]:flex [&>ul>li]:flex-shrink-0 [&>ul>li]:w-1/2 [&>ul>li]:md:w-1/3"
+          >
+            <ContentList content="projects" limit="10" />
+          </div>
         </div>
       </section>
 
       <section class="sticky top-22 h-screen bg-gray-200 p-10">
+        <h1 class="text-7xl font-bold text-black">B L 0 G S :</h1>
+        <div class="absolute top-1/2 -translate-y-1/2 w-full left-0 right-0">
+          <div
+            class="overflow-x-auto hide-scrollbar
+              [mask-image:linear-gradient(to_right,transparent,black_2%,black_98%,transparent)]
+              [mask-repeat:no-repeat] [mask-size:100%_100%]
+              [&>ul]:space-x-10
+              [&>ul]:flex [&>ul>li]:flex-shrink-0 [&>ul>li]:w-1/2 [&>ul>li]:md:w-1/3"
+          >
+            <ContentList content="blog" limit="5" />
+          </div>
+        </div>
+      </section>
+
+      <section class="sticky top-22 h-screen bg-white p-10">
         <h1 class="text-7xl font-bold text-black">T H 0 U G H T S:</h1>
-        <h2 class="text-7xl font-bold text-black">
-          "Uncertainty is an uncomfortable position. But certainty is an absurd
-          one."
-        </h2>
+        <div
+          class="absolute top-1/2 -translate-y-1/2 w-full left-0 right-0 flex p-10"
+        >
+          <h2 class="text-7xl font-bold text-black p-5">
+            "Uncertainty is an uncomfortable position. But certainty is an
+            absurd one."
+          </h2>
+          <div class="border-l border-black h-100"></div>
+          <h2 class="text-7xl font-bold text-black p-5">
+            "Uncertainty is an uncomfortable position. But certainty is an
+            absurd one."
+          </h2>
+        </div>
       </section>
 
       <!-- <SvgAnim /> -->

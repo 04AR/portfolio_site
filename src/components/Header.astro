@@ -30,7 +30,7 @@ import { SITE_TITLE } from "../consts";
       <ul
         class="flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0"
       >
-        <div class="social-links flex">
+        <div class="hidden social-links md:flex">
           <a href="https://x.com/_AR_04_" target="_blank">
             <span class="sr-only">Follow me on Twitter</span>
             <svg
@@ -80,8 +80,8 @@ import { SITE_TITLE } from "../consts";
               ></path></svg
             >
           </a>
+          <div class="border-l border-gray-300 h-10"></div>
         </div>
-        <div class="border-l border-gray-300 h-10"></div>
         <HeaderLink href="/">H0ME</HeaderLink>
         <div class="border-l border-gray-300 h-10"></div>
         <HeaderLink href="/blog">BL0GS</HeaderLink>
@@ -89,7 +89,6 @@ import { SITE_TITLE } from "../consts";
         <HeaderLink href="/projects">PR0JECTS</HeaderLink>
         <div class="border-l border-gray-300 h-10"></div>
         <HeaderLink href="/about">AB0UT</HeaderLink>
-        <!-- <HeaderLink href="/contacts">C0NTACTS</HeaderLink> -->
       </ul>
     </nav>
   </div>

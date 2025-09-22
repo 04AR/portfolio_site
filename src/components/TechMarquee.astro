@@ -6,194 +6,399 @@ interface Props {
 
 const { reverse = false } = Astro.props;
 
-const marqueeDirectionClass = reverse ? 'marquee-reverse' : '';
+const marqueeDirectionClass = reverse ? "marquee-reverse" : "";
 ---
 
 <div
   id="marqueeTrack"
-  class:list={['bg-gray-200 relative flex overflow-hidden p-6 track-container', marqueeDirectionClass]}
+  class:list={[
+    "bg-gray-200 relative flex overflow-hidden p-6 track-container",
+    marqueeDirectionClass,
+  ]}
 >
   <div class="marquee-content flex">
     <div class="shrink-0 flex justify-around min-w-full icon-set">
-      <h1 class="text-8xl font-bold text-black">A P P  D E V</h1>
-      <img src="/portfolio_site/svgs/devicon--androidstudio.svg" alt="android" title="androidstudio" />
-      <img src="/portfolio_site/svgs/devicon--flutter.svg" alt="flutter" title="flutter" />
-      <img src="/portfolio_site/svgs/devicon--reactnative-wordmark.svg" alt="react" title="react" />
+      <h1 class="md:text-7xl text-5xl font-bold text-black">A P P D E V</h1>
+      <img
+        src="/portfolio_site/svgs/devicon--androidstudio.svg"
+        alt="android"
+        title="androidstudio"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--flutter.svg"
+        alt="flutter"
+        title="flutter"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--reactnative-wordmark.svg"
+        alt="react"
+        title="react"
+      />
 
-      <h1 class="text-8xl font-bold text-black">F R O N T E N D</h1>
-      <img src="/portfolio_site/svgs/devicon--html5.svg" alt="html" title="html" />
+      <h1 class="md:text-7xl text-5xl font-bold text-black">F R O N T E N D</h1>
+      <img
+        src="/portfolio_site/svgs/devicon--html5.svg"
+        alt="html"
+        title="html"
+      />
       <img src="/portfolio_site/svgs/devicon--css3.svg" alt="css" title="css" />
-      <img src="/portfolio_site/svgs/devicon--tailwindcss.svg" alt="tailwindcss" title="tailwindcss" />
-      <img src="/portfolio_site/svgs/devicon--astro.svg" alt="astro" title="astro" />
-      <img src="/portfolio_site/svgs/devicon--svelte.svg" alt="svelte" title="svelte" />
-      <img src="/portfolio_site/svgs/devicon--react-wordmark.svg" alt="react" title="react" />
-      <img src="/portfolio_site/svgs/devicon--threejs-wordmark.svg" alt="threejs" title="threejs" />
-      
-      <h1 class="text-8xl font-bold text-black">B A C K E N D</h1>
-      <img src="/portfolio_site/svgs/devicon--nodejs-wordmark.svg" alt="nodejs" title="nodejs" />
-      <img src="/portfolio_site/svgs/devicon--firebase-wordmark.svg" alt="firebase" title="firebase" />
-      <img src="/portfolio_site/svgs/devicon--mongodb-wordmark.svg" alt="mongodb" title="mongodb" />
-      <img src="/portfolio_site/svgs/devicon--postgresql-wordmark.svg" alt="postgresql" title="postgresql" />
-      
-      <h1 class="text-8xl font-bold text-black">L A N G U A G E S</h1>
-      <img src="/portfolio_site/svgs/devicon--cplusplus.svg" alt="c++" title="c++" />
-      <img src="/portfolio_site/svgs/devicon--python-wordmark.svg" alt="python" title="python" />
-      <img src="/portfolio_site/svgs/devicon--java-wordmark.svg" alt="java" title="java" />
-      <img src="/portfolio_site/svgs/devicon--rust.svg" alt="rust" title="rust" />
-      <img src="/portfolio_site/svgs/devicon--go-wordmark.svg" alt="go" title="go" />
-      <img src="/portfolio_site/svgs/devicon--javascript.svg" alt="javascript" title="javascript" />
-      <img src="/portfolio_site/svgs/devicon--typescript.svg" alt="typescript" title="typescript" />
+      <img
+        src="/portfolio_site/svgs/devicon--tailwindcss.svg"
+        alt="tailwindcss"
+        title="tailwindcss"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--astro.svg"
+        alt="astro"
+        title="astro"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--svelte.svg"
+        alt="svelte"
+        title="svelte"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--react-wordmark.svg"
+        alt="react"
+        title="react"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--threejs-wordmark.svg"
+        alt="threejs"
+        title="threejs"
+      />
 
-      <h1 class="text-8xl font-bold text-black">G A M E  D E V</h1>
-      <img src="/portfolio_site/svgs/devicon--godot.svg" alt="godot" title="godot" />
-      <img src="/portfolio_site/svgs/devicon--unrealengine-wordmark.svg" alt="unreal" title="unreal" />
-      <img src="/portfolio_site/svgs/devicon--unity-wordmark.svg" alt="unity" title="unity" />
-      <img src="/portfolio_site/svgs/devicon--blender.svg" alt="blender3d" title="blender3d" />
-      <img src="/portfolio_site/svgs/devicon--git-wordmark.svg" alt="git" title="git" />
-      <img src="/portfolio_site/svgs/devicon--docker-wordmark.svg" alt="docker" title="docker" />
+      <h1 class="md:text-7xl text-5xl font-bold text-black">B A C K E N D</h1>
+      <img
+        src="/portfolio_site/svgs/devicon--nodejs-wordmark.svg"
+        alt="nodejs"
+        title="nodejs"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--firebase-wordmark.svg"
+        alt="firebase"
+        title="firebase"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--mongodb-wordmark.svg"
+        alt="mongodb"
+        title="mongodb"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--postgresql-wordmark.svg"
+        alt="postgresql"
+        title="postgresql"
+      />
+
+      <h1 class="md:text-7xl text-5xl font-bold text-black">
+        L A N G U A G E S
+      </h1>
+      <img
+        src="/portfolio_site/svgs/devicon--cplusplus.svg"
+        alt="c++"
+        title="c++"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--python-wordmark.svg"
+        alt="python"
+        title="python"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--java-wordmark.svg"
+        alt="java"
+        title="java"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--rust.svg"
+        alt="rust"
+        title="rust"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--go-wordmark.svg"
+        alt="go"
+        title="go"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--javascript.svg"
+        alt="javascript"
+        title="javascript"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--typescript.svg"
+        alt="typescript"
+        title="typescript"
+      />
+
+      <h1 class="md:text-7xl text-5xl font-bold text-black">G A M E D E V</h1>
+      <img
+        src="/portfolio_site/svgs/devicon--godot.svg"
+        alt="godot"
+        title="godot"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--unrealengine-wordmark.svg"
+        alt="unreal"
+        title="unreal"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--unity-wordmark.svg"
+        alt="unity"
+        title="unity"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--blender.svg"
+        alt="blender3d"
+        title="blender3d"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--git-wordmark.svg"
+        alt="git"
+        title="git"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--docker-wordmark.svg"
+        alt="docker"
+        title="docker"
+      />
     </div>
 
     <div
       aria-hidden="true"
       class="shrink-0 flex justify-around min-w-full icon-set"
     >
-      <h1 class="text-8xl font-bold text-black">A P P_D E V</h1>
-      <img src="/portfolio_site/svgs/devicon--androidstudio.svg" alt="android" title="androidstudio" />
-      <img src="/portfolio_site/svgs/devicon--flutter.svg" alt="flutter" title="flutter" />
+      <h1 class="md:text-7xl text-5xl font-bold text-black">A P P_D E V</h1>
+      <img
+        src="/portfolio_site/svgs/devicon--androidstudio.svg"
+        alt="android"
+        title="androidstudio"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--flutter.svg"
+        alt="flutter"
+        title="flutter"
+      />
 
-      <h1 class="text-8xl font-bold text-black">F R O N T E N D</h1>
-      <img src="/portfolio_site/svgs/devicon--html5.svg" alt="html" title="html" />
+      <h1 class="md:text-7xl text-5xl font-bold text-black">F R O N T E N D</h1>
+      <img
+        src="/portfolio_site/svgs/devicon--html5.svg"
+        alt="html"
+        title="html"
+      />
       <img src="/portfolio_site/svgs/devicon--css3.svg" alt="css" title="css" />
-      <img src="/portfolio_site/svgs/devicon--tailwindcss.svg" alt="tailwindcss" title="tailwindcss" />
-      <img src="/portfolio_site/svgs/devicon--astro.svg" alt="astro" title="astro" />
-      <img src="/portfolio_site/svgs/devicon--svelte.svg" alt="svelte" title="svelte" />
-      <img src="/portfolio_site/svgs/devicon--react-wordmark.svg" alt="react" title="react" />
-      <img src="/portfolio_site/svgs/devicon--threejs-wordmark.svg" alt="threejs" title="threejs" />
-      
-      <h1 class="text-8xl font-bold text-black">B A C K E N D</h1>
-      <img src="/portfolio_site/svgs/devicon--nodejs-wordmark.svg" alt="nodejs" title="nodejs" />
-      <img src="/portfolio_site/svgs/devicon--firebase-wordmark.svg" alt="firebase" title="firebase" />
-      <img src="/portfolio_site/svgs/devicon--mongodb-wordmark.svg" alt="mongodb" title="mongodb" />
-      <img src="/portfolio_site/svgs/devicon--postgresql-wordmark.svg" alt="postgresql" title="postgresql" />
-      
-      <h1 class="text-8xl font-bold text-black">L A N G U A G E S</h1>
-      <img src="/portfolio_site/svgs/devicon--cplusplus.svg" alt="c++" title="c++" />
-      <img src="/portfolio_site/svgs/devicon--python-wordmark.svg" alt="python" title="python" />
-      <img src="/portfolio_site/svgs/devicon--rust.svg" alt="rust" title="rust" />
-      <img src="/portfolio_site/svgs/devicon--go-wordmark.svg" alt="go" title="go" />
-      <img src="/portfolio_site/svgs/devicon--javascript.svg" alt="javascript" title="javascript" />
-      <img src="/portfolio_site/svgs/devicon--typescript.svg" alt="typescript" title="typescript" />
+      <img
+        src="/portfolio_site/svgs/devicon--tailwindcss.svg"
+        alt="tailwindcss"
+        title="tailwindcss"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--astro.svg"
+        alt="astro"
+        title="astro"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--svelte.svg"
+        alt="svelte"
+        title="svelte"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--react-wordmark.svg"
+        alt="react"
+        title="react"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--threejs-wordmark.svg"
+        alt="threejs"
+        title="threejs"
+      />
 
-      <h1 class="text-8xl font-bold text-black">G A M E_D E V</h1>
-      <img src="/portfolio_site/svgs/devicon--godot.svg" alt="godot" title="godot" />
-      <img src="/portfolio_site/svgs/devicon--unrealengine-wordmark.svg" alt="unreal" title="unreal" />
-      <img src="/portfolio_site/svgs/devicon--unity-wordmark.svg" alt="unity" title="unity" />
-      <img src="/portfolio_site/svgs/devicon--blender.svg" alt="blender3d" title="blender3d" />
-      <img src="/portfolio_site/svgs/devicon--git-wordmark.svg" alt="git" title="git" />
-      <img src="/portfolio_site/svgs/devicon--docker-wordmark.svg" alt="docker" title="docker" />
+      <h1 class="md:text-7xl text-5xl font-bold text-black">B A C K E N D</h1>
+      <img
+        src="/portfolio_site/svgs/devicon--nodejs-wordmark.svg"
+        alt="nodejs"
+        title="nodejs"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--firebase-wordmark.svg"
+        alt="firebase"
+        title="firebase"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--mongodb-wordmark.svg"
+        alt="mongodb"
+        title="mongodb"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--postgresql-wordmark.svg"
+        alt="postgresql"
+        title="postgresql"
+      />
+
+      <h1 class="md:text-7xl text-5xl font-bold text-black">
+        L A N G U A G E S
+      </h1>
+      <img
+        src="/portfolio_site/svgs/devicon--cplusplus.svg"
+        alt="c++"
+        title="c++"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--python-wordmark.svg"
+        alt="python"
+        title="python"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--rust.svg"
+        alt="rust"
+        title="rust"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--go-wordmark.svg"
+        alt="go"
+        title="go"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--javascript.svg"
+        alt="javascript"
+        title="javascript"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--typescript.svg"
+        alt="typescript"
+        title="typescript"
+      />
+
+      <h1 class="md:text-7xl text-5xl font-bold text-black">G A M E_D E V</h1>
+      <img
+        src="/portfolio_site/svgs/devicon--godot.svg"
+        alt="godot"
+        title="godot"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--unrealengine-wordmark.svg"
+        alt="unreal"
+        title="unreal"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--unity-wordmark.svg"
+        alt="unity"
+        title="unity"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--blender.svg"
+        alt="blender3d"
+        title="blender3d"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--git-wordmark.svg"
+        alt="git"
+        title="git"
+      />
+      <img
+        src="/portfolio_site/svgs/devicon--docker-wordmark.svg"
+        alt="docker"
+        title="docker"
+      />
     </div>
   </div>
 </div>
 
-
-
 <style>
-/*
+  /*
  * Base Styles for the Marquee Container
  * - Controls the viewport for the scrolling icons.
  * - `overflow: hidden` is crucial for masking and preventing default scrollbars.
  * - `mask-image` creates the fading edges.
  */
- .track-container {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  position: relative;
-  background-color: transparent;
-  padding: 6px 0; /* Changed from 6px to 6px 0 to be more explicit with vertical padding */
+  .track-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    background-color: transparent;
+    padding: 6px 0; /* Changed from 6px to 6px 0 to be more explicit with vertical padding */
 
-  /* --- Fading Edges using mask-image --- */
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-}
+    /* --- Fading Edges using mask-image --- */
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
 
-/*
+  /*
  * Styles for the Marquee Content
  * - This is the element that actually animates horizontally.
  * - `will-change: transform` is a direct performance hint to the browser.
  * - `transform: translate3d` forces GPU acceleration, a common jitter fix.
  */
-.marquee-content {
-  display: flex;
-  flex-shrink: 0;
-  white-space: nowrap;
-  animation: marquee-animation 40s linear infinite;
+  .marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    white-space: nowrap;
+    animation: marquee-animation 40s linear infinite;
 
-  /* --- Key Jitter Fix --- */
-  /* This is the modern and recommended approach for smooth animations. */
-  will-change: transform; 
-  /* Fallback/additional fix for older browsers or stubborn jitters. */
-  /* transform: translate3d(0, 0, 0); */
-}
+    /* --- Key Jitter Fix --- */
+    /* This is the modern and recommended approach for smooth animations. */
+    will-change: transform;
+    /* Fallback/additional fix for older browsers or stubborn jitters. */
+    /* transform: translate3d(0, 0, 0); */
+  }
 
-/*
+  /*
  * Styles for Individual Icon Sets
  * - Each `.icon-set` contains one full group of icons.
  * - We are now using a specific padding on the icons to ensure consistent spacing.
  */
-.icon-set {
-  flex-shrink: 0;
+  .icon-set {
+    flex-shrink: 0;
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 10px;
-}
-
-.icon-set img {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out;
-  max-height: 80px;
-  width: auto;
-  cursor: pointer;
-  display: inline-block;
-  object-fit: contain;
-  margin: 0 10px; /* Added a fixed margin for consistent spacing */
-}
-
-.icon-set img:hover {
-  filter: grayscale(0%);
-}
-
-.track-container:hover .marquee-content {
-  animation-play-state: paused;
-}
-
-.marquee-reverse .marquee-content {
-  animation-direction: reverse;
-}
-
-@keyframes marquee-animation {
-  from {
-    /* Use a calc() for precision. `100%` here refers to the width of the animated element, which is the `marquee-content`. */
-    transform: translateX(0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
   }
-  to {
-    /* Move the content to the left by the width of one icon-set.
+
+  .icon-set img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+    max-height: 80px;
+    width: auto;
+    cursor: pointer;
+    display: inline-block;
+    object-fit: contain;
+    margin: 0 10px; /* Added a fixed margin for consistent spacing */
+  }
+
+  .icon-set img:hover {
+    filter: grayscale(0%);
+  }
+
+  .track-container:hover .marquee-content {
+    animation-play-state: paused;
+  }
+
+  .marquee-reverse .marquee-content {
+    animation-direction: reverse;
+  }
+
+  @keyframes marquee-animation {
+    from {
+      /* Use a calc() for precision. `100%` here refers to the width of the animated element, which is the `marquee-content`. */
+      transform: translateX(0);
+    }
+    to {
+      /* Move the content to the left by the width of one icon-set.
        Since `marquee-content` is 200% of the container, -50% is one icon set's width. */
-    transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
   }
-}
 </style>
